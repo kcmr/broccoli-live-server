@@ -1,8 +1,11 @@
 {
   "name": "broccoli-live-server",
   "version": "1.0.0",
-  "description": "",
+  "description": "Live Server plugin for Broccoli projects",
   "main": "index.js",
+  "files": [
+    "index.js"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,8 +14,8 @@
     "live-server",
     "server"
   ],
-  "author": "",
-  "license": "ISC",
+  "author": "Kus Cámara <kus.camara@gmail.com>",
+  "license": "MIT",
   "dependencies": {
     "broccoli-plugin": "^2.1.0",
     "deep-extend": "^0.6.0",
