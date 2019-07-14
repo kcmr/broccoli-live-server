@@ -16,6 +16,10 @@
   ],
   "author": "Kus Cámara <kus.camara@gmail.com>",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kcmr/broccoli-live-server.git"
+  },
   "dependencies": {
     "broccoli-plugin": "^2.1.0",
     "deep-extend": "^0.6.0",
