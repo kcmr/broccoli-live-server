@@ -6,6 +6,17 @@ const { assert } = require('chai');
 const liveServer = require('live-server');
 const Plugin = require('../index');
 
+async function initPlugin(options = {}) {
+  const input = await createTempDir();
+  const inputPath = input.path();
+  const subject = new Plugin(inputPath, options);
+  const output = createBuilder(subject);
+
+  await output.build();
+
+  return { inputPath, output };
+}
+
 describe('broccoli-live-server', () => {
   let liveServerStub;
 
@@ -18,11 +29,7 @@ describe('broccoli-live-server', () => {
   });
 
   it('starts a live server with default options', async() => {
-    const input = await createTempDir();
-    const subject = new Plugin(input.path());
-    const output = createBuilder(subject);
-
-    await output.build();
+    const { inputPath } = await initPlugin();
 
     const defaultOptions = {
       open: false,
@@ -30,24 +37,25 @@ describe('broccoli-live-server', () => {
     };
 
     const expectedArguments = Object.assign({}, defaultOptions, {
-      root: input.path()
+      root: inputPath
     });
 
     assert.ok(liveServerStub.calledWith(expectedArguments));
   });
 
   it('starts a live server with custom options', async() => {
-    const input = await createTempDir();
     const customOptions = { foo: 'bar' };
-    const subject = new Plugin(input.path(), customOptions);
-    const output = createBuilder(subject);
-
-    await output.build();
+    await initPlugin(customOptions);
 
     const callArguments = liveServerStub.getCall(0).args[0];
 
     assert.include(callArguments, customOptions);
   });
 
-  it.skip('does not start a new server if there is one running');
+  it('does not start a new server if there is one running', async() => {
+    const { output } = await initPlugin();
+    output.build();
+
+    assert.ok(liveServerStub.calledOnce);
+  });
 });
