@@ -23,7 +23,9 @@
     ],
     "reporter": [
       "lcov",
-      "text"
+      "text",
+      "json",
+      "json-summary"
     ]
   },
   "lint-staged": {
