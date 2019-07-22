@@ -1,6 +1,6 @@
 {
   "name": "broccoli-live-server",
-  "version": "1.0.0",
+  "version": "0.0.0-development",
   "description": "Live Server plugin for Broccoli projects",
   "main": "index.js",
   "files": [
@@ -10,7 +10,8 @@
     "test": "mocha tests/",
     "test:watch": "mocha tests/ --watch",
     "coverage": "nyc npm t",
-    "lint": "eslint --fix --max-warnings 0 ./*.js tests"
+    "lint": "eslint --fix --max-warnings 0 ./*.js tests",
+    "semantic-release": "semantic-release"
   },
   "nyc": {
     "check-coverage": true,
@@ -67,6 +68,7 @@
     "lint-staged": "^9.2.0",
     "mocha": "^6.2.0",
     "nyc": "^14.1.1",
-    "sinon": "^7.3.2"
+    "sinon": "^7.3.2",
+    "semantic-release": "^15.13.18"
   }
 }
