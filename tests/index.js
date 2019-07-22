@@ -6,7 +6,7 @@ const { assert } = require('chai');
 const liveServer = require('live-server');
 const Plugin = require('../index');
 
-async function initPlugin(options = {}) {
+async function initPlugin(options) {
   const input = await createTempDir();
   const inputPath = input.path();
   const subject = new Plugin(inputPath, options);
@@ -21,7 +21,7 @@ describe('broccoli-live-server', () => {
   let liveServerStub;
 
   beforeEach(() => {
-    liveServerStub = sinon.stub(liveServer, 'start');
+    liveServerStub = sinon.stub(liveServer, 'start').returns(true);
   });
 
   afterEach(() => {
@@ -54,7 +54,7 @@ describe('broccoli-live-server', () => {
 
   it('does not start a new server if there is one running', async() => {
     const { output } = await initPlugin();
-    output.build();
+    await output.build();
 
     assert.ok(liveServerStub.calledOnce);
   });
