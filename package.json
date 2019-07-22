@@ -9,7 +9,8 @@
   "scripts": {
     "test": "mocha tests/",
     "test:watch": "mocha tests/ --watch",
-    "coverage": "nyc npm t"
+    "coverage": "nyc npm t",
+    "lint": "eslint --max-warnings 0 **/*.js"
   },
   "nyc": {
     "check-coverage": true,
@@ -25,8 +26,15 @@
       "text"
     ]
   },
+  "lint-staged": {
+    "**/*.js": [
+      "npm run lint -- --fix",
+      "git add"
+    ]
+  },
   "husky": {
     "hooks": {
+      "pre-commit": "lint-staged",
       "pre-push": "npm run coverage"
     }
   },
@@ -49,7 +57,12 @@
   "devDependencies": {
     "broccoli-test-helper": "^2.0.0",
     "chai": "^4.2.0",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.2.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-node": "^9.1.0",
     "husky": "^3.0.1",
+    "lint-staged": "^9.2.0",
     "mocha": "^6.2.0",
     "nyc": "^14.1.1",
     "sinon": "^7.3.2"

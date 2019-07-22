@@ -28,22 +28,22 @@ describe('broccoli-live-server', () => {
     liveServerStub.restore();
   });
 
-  it('starts a live server with default options', async() => {
+  it('starts a live server with default options', async () => {
     const { inputPath } = await initPlugin();
 
     const defaultOptions = {
       open: false,
-      ignore: /.*\.map/
+      ignore: /.*\.map/,
     };
 
     const expectedArguments = Object.assign({}, defaultOptions, {
-      root: inputPath
+      root: inputPath,
     });
 
     assert.ok(liveServerStub.calledWith(expectedArguments));
   });
 
-  it('starts a live server with custom options', async() => {
+  it('starts a live server with custom options', async () => {
     const customOptions = { foo: 'bar' };
     await initPlugin(customOptions);
 
@@ -52,7 +52,7 @@ describe('broccoli-live-server', () => {
     assert.include(callArguments, customOptions);
   });
 
-  it('does not start a new server if there is one running', async() => {
+  it('does not start a new server if there is one running', async () => {
     const { output } = await initPlugin();
     await output.build();
 
