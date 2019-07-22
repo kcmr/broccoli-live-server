@@ -7,12 +7,12 @@ const liveServer = require('live-server');
 class BroccoliLiveServer extends Plugin {
   constructor(inputNode, options = {}) {
     super([inputNode], {
-      annotation: 'BroccoliLiveServer'
+      annotation: 'BroccoliLiveServer',
     });
 
     const defaults = {
       open: false,
-      ignore: /.*\.map/
+      ignore: /.*\.map/,
     };
 
     this.options = extend(defaults, options);

@@ -10,7 +10,7 @@
     "test": "mocha tests/",
     "test:watch": "mocha tests/ --watch",
     "coverage": "nyc npm t",
-    "lint": "eslint --max-warnings 0 **/*.js"
+    "lint": "eslint --max-warnings 0 ./*.js tests"
   },
   "nyc": {
     "check-coverage": true,
