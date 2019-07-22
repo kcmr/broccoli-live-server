@@ -25,6 +25,11 @@
       "text"
     ]
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm t"
+    }
+  },
   "keywords": [
     "broccoli-plugin",
     "live-server",
@@ -44,6 +49,7 @@
   "devDependencies": {
     "broccoli-test-helper": "^2.0.0",
     "chai": "^4.2.0",
+    "husky": "^3.0.1",
     "mocha": "^6.2.0",
     "nyc": "^14.1.1",
     "sinon": "^7.3.2"
