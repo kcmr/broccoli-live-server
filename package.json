@@ -27,7 +27,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-push": "npm t"
+      "pre-push": "npm run coverage"
     }
   },
   "keywords": [
