@@ -46,4 +46,4 @@ Note: the `root` option is set by the plugin to the input path.
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE.md).
+This project is licensed under the [MIT License](LICENSE).
