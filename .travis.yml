@@ -20,6 +20,5 @@ script:
 deploy:
   - provider: script
     skip_cleanup: true
-    if: branch = master
     script:
       - npx semantic-release

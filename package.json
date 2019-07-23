@@ -61,7 +61,8 @@
       "@semantic-release/changelog",
       "@semantic-release/git"
     ],
-    "branch": "master"
+    "branch": "master",
+    "tagFormat": "${version}"
   },
   "keywords": [
     "broccoli-plugin",
