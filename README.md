@@ -43,3 +43,7 @@ Default:
 See [Live Server options](https://github.com/tapio/live-server#usage-from-node).   
 
 Note: the `root` option is set by the plugin to the input path.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE.md).
