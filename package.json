@@ -1,13 +1,67 @@
 {
   "name": "broccoli-live-server",
-  "version": "1.0.0",
+  "version": "0.0.0-development",
   "description": "Live Server plugin for Broccoli projects",
   "main": "index.js",
   "files": [
     "index.js"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha tests/",
+    "test:watch": "mocha tests/ --watch",
+    "coverage": "nyc npm t",
+    "lint": "eslint --fix --max-warnings 0 ./*.js tests",
+    "semantic-release": "semantic-release",
+    "commit": "git-cz"
+  },
+  "nyc": {
+    "check-coverage": true,
+    "branches": 85,
+    "lines": 85,
+    "functions": 85,
+    "statements": 85,
+    "exclude": [
+      "tests/*"
+    ],
+    "reporter": [
+      "lcov",
+      "text",
+      "json",
+      "json-summary"
+    ]
+  },
+  "lint-staged": {
+    "**/*.js": [
+      "npm run lint",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "npm run coverage",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "release": {
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/npm",
+      "@semantic-release/changelog",
+      "@semantic-release/git"
+    ],
+    "branch": "master"
   },
   "keywords": [
     "broccoli-plugin",
@@ -24,5 +78,28 @@
     "broccoli-plugin": "^2.1.0",
     "deep-extend": "^0.6.0",
     "live-server": "^1.2.1"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^8.1.0",
+    "@commitlint/config-conventional": "^8.1.0",
+    "@semantic-release/changelog": "^3.0.4",
+    "@semantic-release/commit-analyzer": "^6.2.0",
+    "@semantic-release/git": "^7.0.16",
+    "@semantic-release/npm": "^5.1.13",
+    "@semantic-release/release-notes-generator": "^7.2.1",
+    "broccoli-test-helper": "^2.0.0",
+    "chai": "^4.2.0",
+    "commitizen": "^4.0.3",
+    "cz-conventional-changelog": "^3.0.2",
+    "eslint": "^6.1.0",
+    "eslint-config-airbnb-base": "^13.2.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-node": "^9.1.0",
+    "husky": "^3.0.1",
+    "lint-staged": "^9.2.0",
+    "mocha": "^6.2.0",
+    "nyc": "^14.1.1",
+    "semantic-release": "^15.13.18",
+    "sinon": "^7.3.2"
   }
 }
