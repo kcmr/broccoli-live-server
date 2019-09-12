@@ -1,6 +1,6 @@
 {
   "name": "broccoli-live-server",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Live Server plugin for Broccoli projects",
   "main": "index.js",
   "files": [
