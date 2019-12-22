@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/kcmr/broccoli-live-server/compare/1.0.3...1.0.4) (2019-12-22)
+
+
+### Bug Fixes
+
+* **package:** update broccoli-plugin to version 4.0.0 ([54d635a](https://github.com/kcmr/broccoli-live-server/commit/54d635a))
+
 ## [1.0.3](https://github.com/kcmr/broccoli-live-server/compare/1.0.2...1.0.3) (2019-09-12)
 
 
