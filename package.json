@@ -32,8 +32,7 @@
   },
   "lint-staged": {
     "**/*.js": [
-      "npm run lint",
-      "git add"
+      "npm run lint"
     ]
   },
   "husky": {
@@ -102,5 +101,8 @@
     "nyc": "^15.0.0",
     "semantic-release": "^16.0.0",
     "sinon": "^8.0.0"
+  },
+  "engines": {
+    "node": ">=8.3.0"
   }
 }
