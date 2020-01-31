@@ -1,5 +1,3 @@
-'use strict';
-
 const Plugin = require('broccoli-plugin');
 const extend = require('deep-extend');
 const liveServer = require('live-server');

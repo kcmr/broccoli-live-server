@@ -1,5 +1,3 @@
-'use strict';
-
 const { createBuilder, createTempDir } = require('broccoli-test-helper');
 const sinon = require('sinon');
 const { assert } = require('chai');
@@ -36,9 +34,7 @@ describe('broccoli-live-server', () => {
       ignore: /.*\.map/,
     };
 
-    const expectedArguments = Object.assign({}, defaultOptions, {
-      root: inputPath,
-    });
+    const expectedArguments = { ...defaultOptions, root: inputPath };
 
     assert.ok(liveServerStub.calledWith(expectedArguments));
   });
