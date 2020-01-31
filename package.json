@@ -32,8 +32,7 @@
   },
   "lint-staged": {
     "**/*.js": [
-      "npm run lint",
-      "git add"
+      "npm run lint"
     ]
   },
   "husky": {
@@ -97,10 +96,13 @@
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-node": "^11.0.0",
     "husky": "^4.0.3",
-    "lint-staged": "^9.2.0",
+    "lint-staged": "^10.0.3",
     "mocha": "^7.0.1",
     "nyc": "^15.0.0",
     "semantic-release": "^16.0.0",
     "sinon": "^8.0.0"
+  },
+  "engines": {
+    "node": ">=8.3.0"
   }
 }
