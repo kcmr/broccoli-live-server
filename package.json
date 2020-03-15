@@ -99,7 +99,7 @@
     "lint-staged": "^10.0.3",
     "mocha": "^7.0.1",
     "nyc": "^15.0.0",
-    "semantic-release": "^16.0.0",
+    "semantic-release": "^17.0.3",
     "sinon": "^9.0.0"
   },
   "engines": {
