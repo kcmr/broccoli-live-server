@@ -97,7 +97,7 @@
     "eslint-plugin-node": "^11.0.0",
     "husky": "^4.0.3",
     "lint-staged": "^10.0.3",
-    "mocha": "^7.0.1",
+    "mocha": "^10.2.0",
     "nyc": "^15.0.0",
     "semantic-release": "^17.0.3",
     "sinon": "^9.0.0"
